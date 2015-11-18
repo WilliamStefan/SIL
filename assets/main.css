@@ -1,0 +1,10 @@
+#header {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.centered{
+	position: fixed;
+	left: 50%;
+	transform: translate(-50%, 0%);
+}

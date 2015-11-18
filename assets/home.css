@@ -1,0 +1,35 @@
+#form-anggaran {
+	top: 150px;
+}
+
+#menu {
+	top: 300px;
+}
+
+/* Tambah transaksi */
+.glyphicon.glyphicon-plus {
+	font-size: 50px;
+	width: 120px;
+	height: 60px;
+}
+
+/* Lihat stok min */
+.glyphicon-stats {
+	font-size: 50px;
+	width: 120px;
+	height: 60px;
+}
+
+/* Data supplier */
+.glyphicon-earphone {
+	font-size: 50px;
+	width: 120px;
+	height: 60px;
+}
+
+/* Data barang */
+.glyphicon-gift {
+	font-size: 50px;
+	width: 120px;
+	height: 60px;
+}
