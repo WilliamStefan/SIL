@@ -35,4 +35,49 @@ class Welcome extends CI_Controller {
 		$this->load->view('welcome_message2');
 		$this->load->view('template/footer.php');
 	}
+	public function index_home()
+	{
+		//[localhost/IF4031/][index.php/][welcome]/[index_home]
+		//[base_path][index.php][controller_name][function_name]
+		$this->load->helper('url');
+		$this->load->view('template/header.php');
+		$this->load->view('home');
+		$this->load->view('template/footer.php');
+	}
+	public function index_supplier()
+	{
+		//[localhost/IF4031/][index.php/][welcome]/[index_home]
+		//[base_path][index.php][controller_name][function_name]
+		$this->load->helper('url');
+		$this->load->view('template/header.php');
+		$this->load->view('supplier');
+		$this->load->view('template/footer.php');
+	}
+	public function index_toBuy()
+	{
+		//[localhost/IF4031/][index.php/][welcome]/[index_home]
+		//[base_path][index.php][controller_name][function_name]
+		$this->load->helper('url');
+		$this->load->view('template/header.php');
+		$this->load->view('toBuy');
+		$this->load->view('template/footer.php');
+	}
+	public function index_barang()
+	{
+		//[localhost/IF4031/][index.php/][welcome]/[index_home]
+		//[base_path][index.php][controller_name][function_name]
+		$this->load->helper('url');
+		$this->load->view('template/header.php');
+		$this->load->view('barang');
+		$this->load->view('template/footer.php');
+	}
+	public function index_minStok()
+	{
+		//[localhost/IF4031/][index.php/][welcome]/[index_home]
+		//[base_path][index.php][controller_name][function_name]
+		$this->load->helper('url');
+		$this->load->view('template/header.php');
+		$this->load->view('minStok');
+		$this->load->view('template/footer.php');
+	}
 }
