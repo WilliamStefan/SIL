@@ -19,65 +19,109 @@ class Welcome extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 
-	public function index()
-	{
+	// Contoh mengakses halaman:
+	// Format: <URL tempat file>/index.php/<nama controller>/<nama fungsi>
+	// Contoh: http://localhost:1337/SIL/index.php/welcome/index_home
+	
+	public function index() {
 		$this->load->helper('url');
-		$this->load->view('template/header');
+		$this->load->view('header');
 		$this->load->view('welcome_message');
 		$this->load->view('template/footer');
 	}
-	public function index_transaction()
-	{
-		//[localhost/IF4031/][index.php/][welcome]/[index_transaksi]
-		//[base_path][index.php][controller_name][function_name]
+	public function index_home() {
 		$this->load->helper('url');
-		$this->load->view('template/header.php');
-		$this->load->view('welcome_message2');
-		$this->load->view('template/footer.php');
-	}
-	public function index_home()
-	{
-		//[localhost/IF4031/][index.php/][welcome]/[index_home]
-		//[base_path][index.php][controller_name][function_name]
-		$this->load->helper('url');
-		$this->load->view('template/header.php');
+		$this->load->view('header');
 		$this->load->view('home');
-		$this->load->view('template/footer.php');
+		$this->load->view('footer');
 	}
-	public function index_supplier()
-	{
-		//[localhost/IF4031/][index.php/][welcome]/[index_home]
-		//[base_path][index.php][controller_name][function_name]
+	public function index_supplier() {
 		$this->load->helper('url');
-		$this->load->view('template/header.php');
+		$this->load->view('header');
 		$this->load->view('supplier');
-		$this->load->view('template/footer.php');
+		$this->load->view('footer');
 	}
-	public function index_toBuy()
-	{
-		//[localhost/IF4031/][index.php/][welcome]/[index_home]
-		//[base_path][index.php][controller_name][function_name]
+	public function index_toBuy() {
 		$this->load->helper('url');
-		$this->load->view('template/header.php');
+		$this->load->view('header');
 		$this->load->view('toBuy');
-		$this->load->view('template/footer.php');
+		$this->load->view('footer');
 	}
-	public function index_barang()
-	{
-		//[localhost/IF4031/][index.php/][welcome]/[index_home]
-		//[base_path][index.php][controller_name][function_name]
+	public function index_barang() {
 		$this->load->helper('url');
-		$this->load->view('template/header.php');
+		$this->load->view('header');
 		$this->load->view('barang');
-		$this->load->view('template/footer.php');
+		$this->load->view('footer');
 	}
-	public function index_minStok()
-	{
-		//[localhost/IF4031/][index.php/][welcome]/[index_home]
-		//[base_path][index.php][controller_name][function_name]
+	public function index_minStok() {
 		$this->load->helper('url');
-		$this->load->view('template/header.php');
+		$this->load->view('header');
 		$this->load->view('minStok');
-		$this->load->view('template/footer.php');
+		$this->load->view('footer');
 	}
+	
+	// Create
+	public function create_new_komponen() {
+		$this->load->helper('url');
+		$this->load->view('header');
+		$this->load->view('create_new_komponen');
+		$this->load->view('footer');
+	}
+	public function new_komponen_into_db() {
+		$this->load->helper('url');
+		$this->load->view('header');
+		$this->load->view('new_komponen_into_db');
+		$this->load->view('footer');
+	}
+	
+	public function create_new_supplier() {
+		$this->load->helper('url');
+		$this->load->view('header');
+		$this->load->view('create_new_supplier');
+		$this->load->view('footer');
+	}
+	public function new_supplier_into_db() {
+		$this->load->helper('url');
+		$this->load->view('header');
+		$this->load->view('new_supplier_into_db');
+		$this->load->view('footer');
+	}
+	
+	public function create_new_histori() {
+		$this->load->helper('url');
+		$this->load->view('header');
+		$this->load->view('create_new_histori');
+		$this->load->view('footer');
+	}
+	public function new_histori_into_db() {
+		$this->load->helper('url');
+		$this->load->view('header');
+		$this->load->view('new_histori_into_db');
+		$this->load->view('footer');
+	}
+	// Read
+	public function read_komponen() {
+		$this->load->helper('url');
+		$this->load->view('header');
+		$this->load->view('read_komponen');
+		$this->load->view('footer');
+	}
+	
+	public function read_histori() {
+		$this->load->helper('url');
+		$this->load->view('header');
+		$this->load->view('read_histori');
+		$this->load->view('footer');
+	}
+	
+	public function read_supplier() {
+		$this->load->helper('url');
+		$this->load->view('header');
+		$this->load->view('read_supplier');
+		$this->load->view('footer');
+	}
+	
+	// Update
+	
+	// Delete
 }
