@@ -23,10 +23,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `histor_penjualan`
+-- Table structure for table `histori_penjualan`
 --
 
-CREATE TABLE IF NOT EXISTS `histor_penjualan` (
+CREATE TABLE IF NOT EXISTS `histori_penjualan` (
   `id` int(6) NOT NULL,
   `tanggal` date NOT NULL,
   `pembeli` varchar(64) NOT NULL,
@@ -67,9 +67,9 @@ CREATE TABLE IF NOT EXISTS `supplier` (
 --
 
 --
--- Indexes for table `histor_penjualan`
+-- Indexes for table `histori_penjualan`
 --
-ALTER TABLE `histor_penjualan`
+ALTER TABLE `histori_penjualan`
   ADD PRIMARY KEY (`id`), ADD KEY `komponen` (`komponen`);
 
 --
@@ -83,19 +83,19 @@ ALTER TABLE `komponen`
 --
 
 --
--- AUTO_INCREMENT for table `histor_penjualan`
+-- AUTO_INCREMENT for table `histori_penjualan`
 --
-ALTER TABLE `histor_penjualan`
+ALTER TABLE `histori_penjualan`
   MODIFY `id` int(6) NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `histor_penjualan`
+-- Constraints for table `histori_penjualan`
 --
-ALTER TABLE `histor_penjualan`
-ADD CONSTRAINT `histor_penjualan_ibfk_1` FOREIGN KEY (`komponen`) REFERENCES `komponen` (`id`);
+ALTER TABLE `histori_penjualan`
+ADD CONSTRAINT `histori_penjualan_ibfk_1` FOREIGN KEY (`komponen`) REFERENCES `komponen` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

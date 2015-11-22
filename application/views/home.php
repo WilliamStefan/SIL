@@ -7,7 +7,7 @@
 
 	<!-- Script -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script type="text/javascript" src="../assets/bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="../../assets/bootstrap/js/bootstrap.js"></script>
 
 	<head>
 		<title>STOCK MANAGER</title>
@@ -31,10 +31,10 @@
 				</div>
 
 				<div id="menu" class="centered">
-					<button type="button" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-plus"></i><br>Tambah transaksi</button>
-					<button type="button" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-stats"></i><br>Lihat stok min</button>
-					<button type="button" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-earphone"></i><br>Data supplier</button>
-					<button type="button" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-gift"></i><br>Data barang</button>
+					<a href="index_toBuy"><button type="button" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-plus"></i><br>Tambah transaksi</button></a>
+					<a href="index_minStok"><button type="button" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-stats"></i><br>Lihat stok min</button></a>
+					<a href="index_supplier"><button type="button" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-earphone"></i><br>Data supplier</button></a>
+					<a href="index_barang"><button type="button" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-gift"></i><br>Data barang</button></a>
 				</div>
 			</div>
 		</div>
