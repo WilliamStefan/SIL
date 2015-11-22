@@ -26,30 +26,30 @@
 						<div class="form-group">
 							<label class="col-sm-5 control-label">ID komponen</label>
 							<div class="col-sm-5">
-								<input id="form-new-komponen-ID" type="text" name="input-ID-komponen" class="form-control" placeholder="Contoh: K-1">
+								<input id="form-new-komponen-ID" type="text" name="input-ID-komponen" class="form-control" placeholder="Contoh: K-1" required>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-5 control-label">Nama komponen</label>
 							<div class="col-sm-5">
-								<input id="form-new-komponen-nama" type="text" name="input-nama-komponen" class="form-control" placeholder="Contoh: Komponen 1">
+								<input id="form-new-komponen-nama" type="text" name="input-nama-komponen" class="form-control" placeholder="Contoh: Komponen 1" required>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-5 control-label">Stok tersedia</label>
 							<div class="col-sm-3">
-								<input id="form-new-komponen-stok-tersedia" type="number" name="input-stok-tersedia" class="form-control" placeholder="Contoh: 100" min="0">
+								<input id="form-new-komponen-stok-tersedia" type="number" name="input-stok-tersedia" class="form-control" placeholder="Contoh: 100" min="0" required>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-5 control-label">Stok minimal</label>
 							<div class="col-sm-3">
-								<input id="form-new-komponen-stok-minimal" type="number" name="input-stok-minimal" class="form-control" placeholder="Contoh: 10" min="0">
+								<input id="form-new-komponen-stok-minimal" type="number" name="input-stok-minimal" class="form-control" placeholder="Contoh: 10" min="0" required>
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-sm-offset-5 col-sm-7">
-								<button id="form-new-komponen-submit" type="submit" class="btn btn-default">Masukkan</button>
+								<button id="form-new-komponen-submit" type="submit" class="btn btn-default" onclick="return confirm('ID komponen tidak akan bisa diganti kemudian. Apakah Anda yakin?');">Masukkan</button>
 							</div>
 						</div>
 					</form>

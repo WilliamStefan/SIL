@@ -28,6 +28,7 @@
 			<div id="content">
 				<div class="row">
 					<div id="toBuyTable" class="col-md-12">
+						<br>
 						<?php
 							if(mysqli_num_rows($read_komponen) == 0) {
 								echo'
@@ -44,20 +45,23 @@
 											<th>Nama komponen</th>
 											<th>Stok tersedia</th>
 											<th>Stok minimal</th>
+											<th>Edit</th>
 										</tr>
 								';		
 								
 								while($row_read_komponen = mysqli_fetch_array($read_komponen)) {
-								echo'
+									$ID = $row_read_komponen['id'];
+									echo'
 										<tr>
 											<td>' .$row_read_komponen['id']. '</td>
 											<td>' .$row_read_komponen['nama']. '</td>
 											<td>' .$row_read_komponen['stok_tersedia']. '</td>
 											<td>' .$row_read_komponen['stok_minimal']. '</td>
+									';
+						?>
+											<td><a href="edit_komponen?id=<?php echo $ID; ?>">Edit</a></td>
 										</tr>
-								';
-								}
-								
+						<?php	}
 								echo'
 									</table>
 								';

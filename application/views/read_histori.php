@@ -29,6 +29,7 @@
 			<div id="content">
 				<div class="row">
 					<div id="toBuyTable" class="col-md-12">
+					<br>
 						<?php
 							if(mysqli_num_rows($read_histori) == 0) {
 								echo'
@@ -46,21 +47,26 @@
 											<th>Komponen</th>
 											<th>Jumlah Komponen</th>
 											<th>Harga</th>
+											<th>Edit</th>
+											<th>Hapus</th>
 										</tr>
 								';		
 								
 								while($row_read_histori = mysqli_fetch_array($read_histori)) {
-								echo'
+									$ID = $row_read_histori['id'];
+									echo'
 										<tr>
 											<td>' .PrintTanggal($row_read_histori['tanggal']). '</td>
 											<td>' .$row_read_histori['pembeli']. '</td>
 											<td>' .$row_read_histori['komponen']. '</td>
 											<td>' .$row_read_histori['jumlah_komponen']. '</td>
 											<td>' .$row_read_histori['harga']. '</td>
+									';
+						?>
+											<td><a href="edit_histori?id=<?php echo $ID; ?>">Edit</a></td>
+											<td><a href="hapus_histori?id=<?php echo $ID; ?>" onclick="return confirm('Apakah Anda yakin menghapus histori ini?');">Hapus</a></td>
 										</tr>
-								';
-								}
-								
+						<?php	}
 								echo'
 									</table>
 								';

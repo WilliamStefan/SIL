@@ -1,8 +1,8 @@
 <?php
 	include 'sql_connect.php';
 	
-	$query = "SELECT * FROM komponen ORDER BY id ASC";
-	$read_komponen = mysqli_query($con, $query);
+	$query = "SELECT * FROM supplier ORDER BY id ASC";
+	$read_supplier = mysqli_query($con, $query);
 ?>
 
 <!DOCTYPE html>
@@ -22,17 +22,18 @@
 	<body>
 		<div class="container">
 			<div id="header">
-				<h1 class="text-center">Lihat Komponen</h1>
+				<h1 class="text-center">Lihat Supplier</h1>
 			</div>
 
 			<div id="content">
 				<div class="row">
 					<div id="toBuyTable" class="col-md-12">
+						<br>
 						<?php
-							if(mysqli_num_rows($read_komponen) == 0) {
+							if(mysqli_num_rows($read_supplier) == 0) {
 								echo'
 									<center>
-										<h2> Basis data komponen kosong</h2>
+										<h2> Basis data supplier kosong</h2>
 									</center>
 								';
 							}
@@ -40,24 +41,31 @@
 								echo'
 									<table class="table table-bordered table-striped table-hover table-condensed table-responsive">	
 										<tr>
-											<th>ID komponen</th>
-											<th>Nama komponen</th>
-											<th>Stok tersedia</th>
-											<th>Stok minimal</th>
+											<th>ID supplier</th>
+											<th>Nama supplier</th>
+											<th>Lokasi</th>
+											<th>Waktu pengiriman (hari)</th>
+											<th>Komponen yang dijual</th>
+											<th>Edit</th>
+											<th>Hapus</th>
 										</tr>
 								';		
 								
-								while($row_read_komponen = mysqli_fetch_array($read_komponen)) {
-								echo'
+								while($row_read_supplier = mysqli_fetch_array($read_supplier)) {
+									$ID = $row_read_supplier['id'];
+									echo'
 										<tr>
-											<td>' .$row_read_komponen['id']. '</td>
-											<td>' .$row_read_komponen['nama']. '</td>
-											<td>' .$row_read_komponen['stok_tersedia']. '</td>
-											<td>' .$row_read_komponen['stok_minimal']. '</td>
+											<td>' .$row_read_supplier['id']. '</td>
+											<td>' .$row_read_supplier['nama']. '</td>
+											<td>' .$row_read_supplier['lokasi']. '</td>
+											<td>' .$row_read_supplier['waktu_pengiriman']. '</td>
+											<td>' .$row_read_supplier['komponen']. '</td>
+									';
+						?>
+											<td><a href="edit_supplier?id=<?php echo $ID; ?>">Edit</a></td>
+											<td><a href="hapus_supplier?id=<?php echo $ID; ?>" onclick="return confirm('Apakah Anda yakin menghapus supplier ini?');">Hapus</a></td>
 										</tr>
-								';
-								}
-								
+						<?php	}
 								echo'
 									</table>
 								';

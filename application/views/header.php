@@ -50,7 +50,7 @@
 									</ul>
 								</li>
 								
-								<li class="dropdown">
+								<!-- <li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Update<span class="caret"></span></a>
 									<ul class="dropdown-menu">
 										<li><a href="#">Komponen</a></li>
@@ -66,7 +66,7 @@
 										<li><a href="#">Histori Penjualan</a></li>
 										<li><a href="#">Supplier</a></li>
 									</ul>
-								</li>
+								</li> -->
 							</ul>
 						</div><!-- /.navbar-collapse -->
 					</div><!-- /.container-fluid -->

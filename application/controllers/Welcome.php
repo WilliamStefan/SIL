@@ -122,6 +122,56 @@ class Welcome extends CI_Controller {
 	}
 	
 	// Update
+	public function edit_komponen() {
+		$this->load->helper('url');
+		$this->load->view('header');
+		$this->load->view('edit_komponen');
+		$this->load->view('footer');
+	}
+	public function edit_komponen_into_db() {
+		$this->load->helper('url');
+		$this->load->view('header');
+		$this->load->view('edit_komponen_into_db');
+		$this->load->view('footer');
+	}
+	
+	public function edit_histori() {
+		$this->load->helper('url');
+		$this->load->view('header');
+		$this->load->view('edit_histori');
+		$this->load->view('footer');
+	}
+	public function edit_histori_into_db() {
+		$this->load->helper('url');
+		$this->load->view('header');
+		$this->load->view('edit_histori_into_db');
+		$this->load->view('footer');
+	}
+	
+	public function edit_supplier() {
+		$this->load->helper('url');
+		$this->load->view('header');
+		$this->load->view('edit_supplier');
+		$this->load->view('footer');
+	}
+	public function edit_supplier_into_db() {
+		$this->load->helper('url');
+		$this->load->view('header');
+		$this->load->view('edit_supplier_into_db');
+		$this->load->view('footer');
+	}
 	
 	// Delete
+	public function hapus_histori() {
+		$this->load->helper('url');
+		$this->load->view('header');
+		$this->load->view('hapus_histori');
+		$this->load->view('footer');
+	}
+	public function hapus_supplier() {
+		$this->load->helper('url');
+		$this->load->view('header');
+		$this->load->view('hapus_supplier');
+		$this->load->view('footer');
+	}
 }
