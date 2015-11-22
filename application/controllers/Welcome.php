@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
 class Welcome extends CI_Controller {
 
 	/**
@@ -53,7 +54,10 @@ class Welcome extends CI_Controller {
 		$this->load->view('barang');
 		$this->load->view('footer');
 	}
-	public function index_minStok() {
+	public function index_minStok()
+	{
+		//$data = new Dss();
+		// $data = array('title'=>'lalala');
 		$this->load->helper('url');
 		$this->load->view('header');
 		$this->load->view('minStok');
