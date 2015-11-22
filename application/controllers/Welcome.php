@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
 class Welcome extends CI_Controller {
 
 	/**
@@ -75,6 +76,8 @@ class Welcome extends CI_Controller {
 	{
 		//[localhost/IF4031/][index.php/][welcome]/[index_home]
 		//[base_path][index.php][controller_name][function_name]
+		//$data = new Dss();
+		// $data = array('title'=>'lalala');
 		$this->load->helper('url');
 		$this->load->view('template/header.php');
 		$this->load->view('minStok');
