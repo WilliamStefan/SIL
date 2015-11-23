@@ -34,11 +34,31 @@
 								echo'
 									<center>
 										<h2> Basis data supplier kosong</h2>
+										
+										<div class="col-md-offset-5 col-md-3">
+											<br>
+											<div class="form-group">
+												<div class="input-group">
+													<div class="input-group-addon"><i class="glyphicon glyphicon-plus"></i></div>
+													<a href="create_new_supplier"><button type="button" class="btn btn-primary">Tambah supplier</button></a>
+												</div>
+											</div>
+										</div>
 									</center>
 								';
 							}
 							else {
 								echo'
+									<div class="col-md-offset-9 col-md-3">
+										<br>
+										<div class="form-group">
+											<div class="input-group">
+												<div class="input-group-addon"><i class="glyphicon glyphicon-plus"></i></div>
+												<a href="create_new_supplier"><button type="button" class="btn btn-primary">Tambah supplier</button></a>
+											</div>
+										</div>
+									</div>
+									
 									<table class="table table-bordered table-striped table-hover table-condensed table-responsive">	
 										<tr>
 											<th>ID supplier</th>

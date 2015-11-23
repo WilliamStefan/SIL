@@ -35,11 +35,31 @@
 								echo'
 									<center>
 										<h2> Basis data histori penjualan kosong</h2>
+										
+										<div class="col-md-offset-5 col-md-3">
+											<br>
+											<div class="form-group">
+												<div class="input-group">
+													<div class="input-group-addon"><i class="glyphicon glyphicon-plus"></i></div>
+													<a href="create_new_histori"><button type="button" class="btn btn-primary">Tambah histori penjualan</button></a>
+												</div>
+											</div>
+										</div>
 									</center>
 								';
 							}
 							else {
 								echo'
+									<div class="col-md-offset-9 col-md-3">
+										<br>
+										<div class="form-group">
+											<div class="input-group">
+												<div class="input-group-addon"><i class="glyphicon glyphicon-plus"></i></div>
+												<a href="create_new_histori"><button type="button" class="btn btn-primary">Tambah histori penjualan</button></a>
+											</div>
+										</div>
+									</div>
+									
 									<table class="table table-bordered table-striped table-hover table-condensed table-responsive">	
 										<tr>
 											<th>Tanggal</th>

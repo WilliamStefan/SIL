@@ -29,12 +29,12 @@
 						<button type="submit" class="btn btn-primary">Cek</button>
 					</form>
 				</div>
-
+				
 				<div id="menu" class="centered">
-					<a href="index_toBuy"><button type="button" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-plus"></i><br>Tambah transaksi</button></a>
+					<a href="create_new_histori"><button type="button" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-plus"></i><br>Tambah transaksi</button></a>
 					<a href="index_minStok"><button type="button" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-stats"></i><br>Lihat stok min</button></a>
-					<a href="index_supplier"><button type="button" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-earphone"></i><br>Data supplier</button></a>
-					<a href="index_barang"><button type="button" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-gift"></i><br>Data barang</button></a>
+					<a href="read_supplier"><button type="button" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-earphone"></i><br>Data supplier</button></a>
+					<a href="read_komponen"><button type="button" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-gift"></i><br>Data barang</button></a>
 				</div>
 			</div>
 		</div>

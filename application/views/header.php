@@ -36,7 +36,7 @@
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Create<span class="caret"></span></a>
 									<ul class="dropdown-menu">
 										<li><a href="create_new_komponen">Komponen</a></li>
-										<li><a href="create_new_histori">Histori Penjualan</a></li>
+										<li><a href="create_new_histori">Histori penjualan</a></li>
 										<li><a href="create_new_supplier">Supplier</a></li>
 									</ul>
 								</li>
@@ -45,7 +45,7 @@
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Read<span class="caret"></span></a>
 									<ul class="dropdown-menu">
 										<li><a href="read_komponen">Komponen</a></li>
-										<li><a href="read_histori">Histori Penjualan</a></li>
+										<li><a href="read_histori">Histori penjualan</a></li>
 										<li><a href="read_supplier">Supplier</a></li>
 									</ul>
 								</li>
