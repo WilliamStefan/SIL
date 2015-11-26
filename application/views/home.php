@@ -1,42 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-	<!-- CSS -->
-	<link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
-	<link href="../../assets/main.css" rel="stylesheet">
-	<link href="../../assets/home.css" rel="stylesheet">
 
-	<!-- Script -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script type="text/javascript" src="../../assets/bootstrap/js/bootstrap.js"></script>
+<div class="container">
+	<div id="header">
+		<h1 class="text-center">STOCK MANAGER</h1>
+	</div>
 
-	<head>
-		<title>STOCK MANAGER</title>
-	</head>
-	
-	<body>
-		<div class="container">
-			<div id="header">
-				<h1 class="text-center">STOCK MANAGER</h1>
-			</div>
-
-			<div id="content">
-				<div id="form-anggaran" class="centered">
-					<form class="form-inline">
-						<div class="form-group">
-							<label for="anggaran">Anggaran</label>	
-							<input type="text" class="form-control" id="anggaranInput" placeholder="Contoh: 1.500.000">
-						</div>
-						<button type="submit" class="btn btn-primary">Cek</button>
-					</form>
+	<div id="content">
+		<div id="form-anggaran" class="centered">
+			<form class="form-inline">
+				<div class="form-group">
+					<label for="anggaran">Anggaran</label>	
+					<input type="text" class="form-control" id="anggaranInput" placeholder="Contoh: 1.500.000">
 				</div>
-				
-				<div id="menu" class="centered">
-					<a href="create_new_histori"><button type="button" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-plus"></i><br>Tambah transaksi</button></a>
-					<a href="index_minStok"><button type="button" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-stats"></i><br>Lihat stok min</button></a>
-					<a href="read_supplier"><button type="button" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-earphone"></i><br>Data supplier</button></a>
-					<a href="read_komponen"><button type="button" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-gift"></i><br>Data barang</button></a>
-				</div>
-			</div>
+				<button type="submit" class="btn btn-primary">Cek</button>
+			</form>
 		</div>
-	</body>
-</html>
+		
+		<div id="menu" class="centered">
+			<a href="create_new_histori"><button type="button" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-plus"></i><br>Tambah transaksi</button></a>
+			<a href="index_minStok"><button type="button" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-stats"></i><br>Lihat stok min</button></a>
+			<a href="read_supplier"><button type="button" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-earphone"></i><br>Data supplier</button></a>
+			<a href="read_komponen"><button type="button" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-gift"></i><br>Data barang</button></a>
+		</div>
+	</div>
+</div>

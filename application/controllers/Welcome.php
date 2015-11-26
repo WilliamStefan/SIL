@@ -23,7 +23,13 @@ class Welcome extends CI_Controller {
 	// Contoh mengakses halaman:
 	// Format: <URL tempat file>/index.php/<nama controller>/<nama fungsi>
 	// Contoh: http://localhost:1337/SIL/index.php/welcome/index_home
-	
+
+	function __Construct(){
+		parent::__Construct ();
+		$this->load->database(); // load database
+		$this->load->model('Komponen_model'); // load model
+	}
+
 	public function index() {
 		$this->load->helper('url');
 		$this->load->view('header');
@@ -32,44 +38,48 @@ class Welcome extends CI_Controller {
 	}
 	public function index_home() {
 		$this->load->helper('url');
-		$this->load->view('header');
+		$this->load->view('template/header');
 		$this->load->view('home');
-		$this->load->view('footer');
+		$this->load->view('template/footer');
 	}
 	public function index_supplier() {
 		$this->load->helper('url');
-		$this->load->view('header');
+		$this->load->view('template/header');
 		$this->load->view('supplier');
-		$this->load->view('footer');
+		$this->load->view('template/footer');
 	}
 	public function index_toBuy() {
 		$this->load->helper('url');
-		$this->load->view('header');
+		$this->load->view('template/header');
 		$this->load->view('toBuy');
-		$this->load->view('footer');
+		$this->load->view('template/footer');
 	}
 	public function index_barang() {
+		//GET DATA FROM DATABASE
+		$data['komponens'] = $this->Komponen_model->getKomponen();
+
 		$this->load->helper('url');
-		$this->load->view('header');
-		$this->load->view('barang');
-		$this->load->view('footer');
+		$this->load->view('template/header');
+		$this->load->view('barang', $data);
+		$this->load->view('template/footer');
 	}
 	public function index_minStok()
 	{
-		//$data = new Dss();
-		// $data = array('title'=>'lalala');
+		//GET DATA FROM DATABASE
+		$data['komponens'] = $this->Komponen_model->getKomponen();
+
 		$this->load->helper('url');
-		$this->load->view('header');
-		$this->load->view('minStok');
-		$this->load->view('footer');
+		$this->load->view('template/header');
+		$this->load->view('minStok',$data);
+		$this->load->view('template/footer');
 	}
 	
 	// Create
 	public function create_new_komponen() {
 		$this->load->helper('url');
-		$this->load->view('header');
+		$this->load->view('template/header');
 		$this->load->view('create_new_komponen');
-		$this->load->view('footer');
+		$this->load->view('template/footer');
 	}
 	public function new_komponen_into_db() {
 		$this->load->helper('url');
@@ -80,9 +90,9 @@ class Welcome extends CI_Controller {
 	
 	public function create_new_supplier() {
 		$this->load->helper('url');
-		$this->load->view('header');
+		$this->load->view('template/header');
 		$this->load->view('create_new_supplier');
-		$this->load->view('footer');
+		$this->load->view('template/footer');
 	}
 	public function new_supplier_into_db() {
 		$this->load->helper('url');
@@ -93,9 +103,9 @@ class Welcome extends CI_Controller {
 	
 	public function create_new_histori() {
 		$this->load->helper('url');
-		$this->load->view('header');
+		$this->load->view('template/header');
 		$this->load->view('create_new_histori');
-		$this->load->view('footer');
+		$this->load->view('template/footer');
 	}
 	public function new_histori_into_db() {
 		$this->load->helper('url');
@@ -106,23 +116,23 @@ class Welcome extends CI_Controller {
 	// Read
 	public function read_komponen() {
 		$this->load->helper('url');
-		$this->load->view('header');
+		$this->load->view('template/header');
 		$this->load->view('read_komponen');
-		$this->load->view('footer');
+		$this->load->view('template/footer');
 	}
 	
 	public function read_histori() {
 		$this->load->helper('url');
-		$this->load->view('header');
+		$this->load->view('template/header');
 		$this->load->view('read_histori');
-		$this->load->view('footer');
+		$this->load->view('template/footer');
 	}
 	
 	public function read_supplier() {
 		$this->load->helper('url');
-		$this->load->view('header');
+		$this->load->view('template/header');
 		$this->load->view('read_supplier');
-		$this->load->view('footer');
+		$this->load->view('template/footer');
 	}
 	
 	// Update
