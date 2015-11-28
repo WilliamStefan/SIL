@@ -27,8 +27,7 @@
 					<tr>
 						<th>Nama barang</th>
 						<th>Sisa stok</th>
-						<th>Supplier</th>
-						<th>Harga beli</th>
+						<!-- <th>Harga beli</th> -->
 						<!--<th>Terjual</th>-->
 						<th>Tambah stok</th>
 						<th></th>
@@ -38,8 +37,7 @@
 					<tr>
 						<td><?php echo $komponenItem['nama_komponen'] ?></td>
 						<td><?php echo $komponenItem['stok_tersedia'] ?></td>
-						<td><?php echo $komponenItem['nama_supplier'] ?></td>
-						<td><?php echo $komponenItem['harga_beli_komponen'] ?></td>
+						<!-- <td><?php echo $komponenItem['harga_beli_komponen'] ?></td> -->
 						<!--<td><?php 
 							echo countSold($komponenItem['id_komponen']);
 						?></td>-->

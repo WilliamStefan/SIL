@@ -11,8 +11,12 @@
 					<label for="anggaran">Anggaran</label>	
 					<input type="text" class="form-control" id="anggaranInput" placeholder="Contoh: 1.500.000">
 				</div>
-				<button type="submit" class="btn btn-primary">Cek</button>
+				<a href="index_toBuy"><button type="button" class="btn btn-primary">Cek</button></a>
+
 			</form>
+
+			<a href="index_toBuy"><button type="button" class="btn btn-primary">What to buy?</button></a>
+
 		</div>
 		
 		<div id="menu" class="centered">

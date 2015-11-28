@@ -5,16 +5,13 @@
 	</div>
 
 	<div id="content">
-		<div class="row">
-			<div class="col-md-3">
-				<h2>Min Stok</h2>
-				<br>
-			</div>
-		</div>
+		<br>
+		<h2>Disarankan untuk dibeli</h2>
+		<br>
 
-		<div class="total">
+		<!-- <div class="total">
 			Subtotal = ...
-		</div>
+		</div> -->
 
 		<!-- pilihan dss: <br><br>
 		<select class="form-group">
@@ -35,7 +32,7 @@
 					</tr>
 					<!-- ulang disini -->
 					<?php foreach ($komponens as $komponenItem): ?>
-					<tr>
+					<?php echo '<tr class="displayChecker" id="displayChecker-'.$komponenItem['id_komponen'].'"> '?><!-- kalo jumlah stok > stok minimal bakal ditampilin -->
 						<td><?php echo $komponenItem['nama_komponen'] ?></td>
 						<td>
 							<select onclick="calculateMinStok('<?php echo $komponenItem['id_komponen']?>')" class="form-control" id="selectSupplier-<?php echo $komponenItem['id_komponen']?>"><?php 
@@ -50,7 +47,7 @@
 								mysqli_close($con);	
 							?></select>
 						</td>
-						<td><?php echo $komponenItem['stok_tersedia'] ?></td>
+						<td><?php echo '<div id="stockNow-'.$komponenItem['id_komponen'].'" >'.$komponenItem['stok_tersedia'].'</div>' ?></td>
 						<td><?php 
 								echo '<div id="price-'.$komponenItem['id_komponen'].'"">'. "HARGA BELI BERDASARKAN SUPPLIER" .'</div>';?></td> 
 						<td><?php 
@@ -78,6 +75,7 @@
 		$id = this.id.substring(15);
 	  	calculateMinStok($id);
 	  	calculateSubtotal($id);
+	  	hideSafeStocks($id);
 	  	// calculateTotal();
 	});
 	function calculateMinStok($id_komponen){
@@ -103,5 +101,13 @@
 			$sum += parseInt($(".subtotal" ).text());
 			$('.total').text($sum);
 		});
+	}
+	function hideSafeStocks($id_komponen){
+		$stoksekarang = $("#stockNow-"+$id_komponen).text();
+		$minimalStok = $("#minStock-"+$id_komponen).text();
+
+		if(parseInt($stoksekarang) > parseInt($minimalStok)){
+			$("#displayChecker-"+$id_komponen).css('display','none');	
+		}
 	}
 </script>

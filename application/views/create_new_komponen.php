@@ -26,15 +26,15 @@
 						<input id="form-new-komponen-stok-tersedia" type="number" name="input-stok-tersedia" class="form-control" placeholder="Contoh: 100" min="0" required>
 					</div>
 				</div>
-				<div class="form-group">
+				<!-- <div class="form-group">
 					<label class="col-sm-5 control-label">Stok minimal</label>
 					<div class="col-sm-3">
 						<input id="form-new-komponen-stok-minimal" type="number" name="input-stok-minimal" class="form-control" placeholder="Contoh: 10" min="0" required>
 					</div>
-				</div>
+				</div> -->
 				<div class="form-group">
 					<div class="col-sm-offset-5 col-sm-7">
-						<button id="form-new-komponen-submit" type="submit" class="btn btn-default" onclick="return confirm('ID komponen tidak akan bisa diganti kemudian. Apakah Anda yakin?');">Masukkan</button>
+						<button id="form-new-komponen-submit" type="submit" class="btn btn-default" onclick="return confirm('ID komponen tidak akan bisa diganti kemudian. Apakah Anda yakin?');">Tambah</button>
 					</div>
 				</div>
 			</form>

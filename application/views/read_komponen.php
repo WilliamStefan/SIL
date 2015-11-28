@@ -52,7 +52,6 @@
 									<th>ID komponen</th>
 									<th>Nama komponen</th>
 									<th>Stok tersedia</th>
-									<th>Stok minimal</th>
 									<th>Edit</th>
 								</tr>
 						';		
@@ -64,7 +63,6 @@
 									<td>' .$row_read_komponen['id_komponen']. '</td>
 									<td>' .$row_read_komponen['nama_komponen']. '</td>
 									<td>' .$row_read_komponen['stok_tersedia']. '</td>
-									<td>' .$row_read_komponen['stok_minimal']. '</td>
 							';
 				?>
 									<td><a href="edit_komponen?id=<?php echo $ID; ?>">Edit</a></td>

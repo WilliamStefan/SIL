@@ -1,7 +1,7 @@
 <?php
 	include 'sql_connect.php';
 	
-	$query = "SELECT * FROM supplier ORDER BY id ASC";
+	$query = "SELECT * FROM supplier ORDER BY id_supplier ASC";
 	$read_supplier = mysqli_query($con, $query);
 ?>
 
@@ -50,21 +50,19 @@
 									<th>Nama supplier</th>
 									<th>Lokasi</th>
 									<th>Waktu pengiriman (hari)</th>
-									<th>Komponen yang dijual</th>
 									<th>Edit</th>
 									<th>Hapus</th>
 								</tr>
 						';		
 						
 						while($row_read_supplier = mysqli_fetch_array($read_supplier)) {
-							$ID = $row_read_supplier['id'];
+							$ID = $row_read_supplier['id_supplier'];
 							echo'
 								<tr>
-									<td>' .$row_read_supplier['id']. '</td>
-									<td>' .$row_read_supplier['nama']. '</td>
-									<td>' .$row_read_supplier['lokasi']. '</td>
+									<td>' .$row_read_supplier['id_supplier']. '</td>
+									<td>' .$row_read_supplier['nama_supplier']. '</td>
+									<td>' .$row_read_supplier['lokasi_supplier']. '</td>
 									<td>' .$row_read_supplier['waktu_pengiriman']. '</td>
-									<td>' .$row_read_supplier['komponen']. '</td>
 							';
 				?>
 									<td><a href="edit_supplier?id=<?php echo $ID; ?>">Edit</a></td>

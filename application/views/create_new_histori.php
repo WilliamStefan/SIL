@@ -10,7 +10,7 @@
 				<div class="form-group">
 					<label class="col-sm-5 control-label">Tanggal</label>
 					<div class="col-sm-5">
-						<input id="form-new-histori-tanggal" type="text" name="input-tanggal" class="form-control" placeholder="yyyy-mm-dd Contoh: 2001-12-31" required>
+						<input id="form-new-histori-tanggal" readonly type="text" name="input-tanggal" class="form-control" placeholder="yyyy-mm-dd Contoh: 2001-12-31" required>
 					</div>
 				</div>
 				<div class="form-group">
@@ -48,4 +48,19 @@
 </div>
 <script>
 	$(function(){$("#form-new-histori-tanggal").datepicker({format: 'yyyy-mm-dd', todayHighlight: true, todayBtn: "linked"});});
+	$(window).load(function(){
+		// alert(formatDate(new Date()));
+		$("#form-new-histori-tanggal").val(formatDate(new Date()));
+	});
+	function formatDate(date) {
+	    var d = new Date(date),
+	        month = '' + (d.getMonth() + 1),
+	        day = '' + d.getDate(),
+	        year = d.getFullYear();
+
+	    if (month.length < 2) month = '0' + month;
+	    if (day.length < 2) day = '0' + day;
+
+	    return [year, month, day].join('-');
+	}
 </script>
