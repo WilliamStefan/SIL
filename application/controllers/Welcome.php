@@ -49,9 +49,11 @@ class Welcome extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 	public function index_toBuy() {
+		$data['komponens'] = $this->Komponen_model->getKomponenAndSupplier();
+
 		$this->load->helper('url');
 		$this->load->view('template/header');
-		$this->load->view('toBuy');
+		$this->load->view('toBuy',$data);
 		$this->load->view('template/footer');
 	}
 	public function index_barang() {

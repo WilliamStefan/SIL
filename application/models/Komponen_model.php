@@ -16,4 +16,13 @@ class Komponen_model extends CI_Model {
 		$query = $this->db->get();
 		return $query->result_array();
 	}
+	public function getKomponenAndSupplier(){
+		$this->db->select('*');
+		$this->db->from('komponen');
+		// $this->db->join('supplier', 'supplier.id_supplier = komponen.supplier');
+		$this->db->order_by('nama_komponen');
+
+		$query = $this->db->get();
+		return $query->result_array();
+	}
 }
