@@ -188,4 +188,9 @@ class Welcome extends CI_Controller {
 		$this->load->view('hapus_supplier');
 		$this->load->view('footer');
 	}
+
+	//functions
+	public function sumSold($component_name){
+
+	}
 }

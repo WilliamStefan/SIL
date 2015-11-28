@@ -1,4 +1,3 @@
-
 <div class="container">
 	<div id="header">
 		<h1 class="text-center">Tambah Histori Penjualan Baru</h1>
@@ -22,7 +21,7 @@
 				</div>
 				<div class="form-group">
 					<label class="col-sm-5 control-label">ID komponen</label>
-					<div class="col-sm-3">
+					<div class="col-sm-3">	
 						<input id="form-new-histori-komponen" type="text" name="input-komponen" class="form-control" placeholder="Contoh: K-1" required>
 					</div>
 				</div>
@@ -32,12 +31,12 @@
 						<input id="form-new-histori-jumlah" type="number" name="input-jumlah" class="form-control" placeholder="Contoh: 100" min="1" required>
 					</div>
 				</div>
-				<div class="form-group">
+				<!-- <div class="form-group">
 					<label class="col-sm-5 control-label">Harga</label>
 					<div class="col-sm-5">
 						<input id="form-new-histori-harga" type="number" name="input-harga" class="form-control" placeholder="Contoh: 10000" min="0" required>
 					</div>
-				</div>
+				</div> -->
 				<div class="form-group">
 					<div class="col-sm-offset-5 col-sm-7">
 						<button id="form-new-histori-submit" type="submit" class="btn btn-default">Masukkan</button>

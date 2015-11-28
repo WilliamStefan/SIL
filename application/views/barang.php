@@ -1,3 +1,4 @@
+<?php include '/../controllers/dss.php';?>
 <div class="container">
 	<div id="header">
 		<h1 class="text-center">STOCK MANAGER</h1>
@@ -28,16 +29,20 @@
 						<th>Sisa stok</th>
 						<th>Supplier</th>
 						<th>Harga beli</th>
-						<th>Tambah</th>
+						<!--<th>Terjual</th>-->
+						<th>Tambah stok</th>
 						<th></th>
 					</tr>
 					<!-- start repeat -->
 					<?php foreach ($komponens as $komponenItem): ?>
 					<tr>
-						<td><?php echo $komponenItem['nama'] ?></td>
+						<td><?php echo $komponenItem['nama_komponen'] ?></td>
 						<td><?php echo $komponenItem['stok_tersedia'] ?></td>
-						<td>--belom ada kolom supplier--</td>
-						<td>--belom ada kolom harga--</td>
+						<td><?php echo $komponenItem['nama_supplier'] ?></td>
+						<td><?php echo $komponenItem['harga_beli_komponen'] ?></td>
+						<!--<td><?php 
+							echo countSold($komponenItem['id_komponen']);
+						?></td>-->
 						<td><button type="button" class="btn btn-link"><i class="glyphicon glyphicon-plus"></i></button></td>
 						<td><button type="button" class="btn btn-link">hapus</button></td>
 					</tr>

@@ -1,4 +1,3 @@
-
 <div class="container">
 	<div id="header">
 		<h1 class="text-center">STOCK MANAGER</h1>
@@ -30,8 +29,8 @@
 				<table class="table table-bordered table-striped table-hover table-condensed table-responsive">
 					<tr>
 						<th>Nama Barang</th>
-						<th>Stok</th>
-						<th>Min stok</th>
+						<!-- <th>Stok</th> -->
+						<!-- <th>Min stok</th> -->
 						<th>Supplier</th>
 						<th>Lama kirim</th>
 						<th>Jumlah</th>
@@ -40,8 +39,8 @@
 					</tr>
 					<tr>
 						<td>1</td>
-						<td>1</td>
-						<td>1</td>
+						<!-- <td>1</td> -->
+						<!-- <td>1</td> -->
 						<td>1</td>
 						<td>1</td>
 						<td>1</td>
