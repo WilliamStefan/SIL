@@ -25,7 +25,7 @@
 					<?php
 						include 'sql_connect.php';
 						
-						$ID = $_GET['id']; 
+						$ID = $_GET['id'];
 						$query = "SELECT * FROM komponen WHERE id='$ID'";
 						$edit_komponen = mysqli_query($con, $query);
 					?>
