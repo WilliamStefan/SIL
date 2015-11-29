@@ -7,12 +7,12 @@
 	<div id="content">
 		<div id="form-anggaran" class="centered">
 			<form class="form-inline">
-				<div class="form-group">
+				<!-- <div class="form-group">
 					<label for="anggaran">Anggaran</label>	
 					<input type="text" class="form-control" id="anggaranInput" placeholder="Contoh: 1.500.000">
-				</div>
-				
-				<a href="index_toBuy"><button type="button" class="btn btn-primary">Apa yang <br> harus dibeli?</button></a>
+				</div> -->
+				<br><br><br>
+				<a href="index_toBuy"><button type="button" class="btn btn-primary"><h4>Apa yang harus dibeli?</h3></button></a>
 
 			</form>
 
