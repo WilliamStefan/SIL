@@ -107,7 +107,7 @@
 							// $a = countSold($komponenItem['id_komponen']);
 							echo '<div id="minStock2-'.$komponenItem['id_komponen'].'">'. "sold" .' </div>';
 						?></div></td>
-						<td class="hiddens"><?php 
+						<td class="hidden"><?php 
 							// store demand of each
 							$a = countSold($komponenItem['id_komponen']);
 							echo '<div id="sold2-'.$komponenItem['id_komponen'].'">'. $a .' </div>';
@@ -198,16 +198,23 @@
 		$t = 1; //rentang hari waktu antar review
 		$z = 0.2; //distribusi normal
 		$i = $("#stockNow-"+$id_komponen).text();
-		$minstok = parseInt($t)+parseInt($selectedSupplierDelTime);
-		$minstok = $minstok * $demand;
-		// --------------------------------------------
-		$minstok = parseInt($minstok) - parseInt($i);
-		// --------------------------------------------
-		$o = Math.sqrt(($t + $i)* $demand * 0.001);
-		$o = $o * $z;
-		$minstok = $minstok + $o;
+		
+		// $minstok = parseInt($t)+parseInt($selectedSupplierDelTime);
+		// $minstok = $minstok * $demand;
+		// // --------------------------------------------
+		// $minstok = parseInt($minstok) - parseInt($i);
+		// // --------------------------------------------
+		// $o = Math.sqrt(($t + $i)* $demand * 0.001);
+		// $o = $o * $z;
+		// $minstok = $minstok + $o;
+		// $minstok = Math.ceil($minstok);
 		// --------------------------------------------
 		// $("#minStock2-"+$id_komponen).text(Math.ceil($demand / 23 * $selectedSupplierDelTime));
+
+		$minstok = 2 * parseInt($demand) * parseInt($selectedSupplierPrice);
+		$minstok = $minstok / (0.1 * parseInt($selectedSupplierPrice));
+		$minstok = Math.ceil(Math.sqrt($minstok));
+
 		$("#minStock2-"+$id_komponen).text($minstok);
 		calculateSubtotal($id_komponen);
 	};
@@ -230,6 +237,9 @@
 		$minimalStok = $("#minStock2-"+$id_komponen).text();
 
 		if(parseInt($stoksekarang) > parseInt($minimalStok)){
+			$("#displayChecker2-"+$id_komponen).css('display','none');	
+		}
+		if($minimalStok == "NaN"){
 			$("#displayChecker2-"+$id_komponen).css('display','none');	
 		}
 	}
