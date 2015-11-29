@@ -28,6 +28,7 @@ class Welcome extends CI_Controller {
 		parent::__Construct ();
 		$this->load->database(); // load database
 		$this->load->model('Komponen_model'); // load model
+		$this->load->model('Supplier_model'); // load model
 	}
 
 	public function index() {
@@ -43,15 +44,20 @@ class Welcome extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 	public function index_supplier() {
+		$data['suppliers'] = $this->Supplier_model->getSuppliers();
+
+
 		$this->load->helper('url');
 		$this->load->view('template/header');
-		$this->load->view('supplier');
+		$this->load->view('supplier',$data);
 		$this->load->view('template/footer');
 	}
 	public function index_toBuy() {
+		$data['komponens'] = $this->Komponen_model->getKomponenAndSupplier();
+
 		$this->load->helper('url');
 		$this->load->view('template/header');
-		$this->load->view('toBuy');
+		$this->load->view('toBuy',$data);
 		$this->load->view('template/footer');
 	}
 	public function index_barang() {
@@ -138,9 +144,15 @@ class Welcome extends CI_Controller {
 	// Update
 	public function edit_komponen() {
 		$this->load->helper('url');
-		$this->load->view('header');
+		$this->load->view('template/header');
 		$this->load->view('edit_komponen');
-		$this->load->view('footer');
+		$this->load->view('template/footer');
+	}
+	public function tambah_komponen(){
+		$this->load->helper('url');
+		$this->load->view('template/header');
+		$this->load->view('tambah_komponen');
+		$this->load->view('template/footer');
 	}
 	public function edit_komponen_into_db() {
 		$this->load->helper('url');
@@ -164,9 +176,9 @@ class Welcome extends CI_Controller {
 	
 	public function edit_supplier() {
 		$this->load->helper('url');
-		$this->load->view('header');
+		$this->load->view('template/header');
 		$this->load->view('edit_supplier');
-		$this->load->view('footer');
+		$this->load->view('template/footer');
 	}
 	public function edit_supplier_into_db() {
 		$this->load->helper('url');
@@ -187,5 +199,10 @@ class Welcome extends CI_Controller {
 		$this->load->view('header');
 		$this->load->view('hapus_supplier');
 		$this->load->view('footer');
+	}
+
+	//functions
+	public function sumSold($component_name){
+
 	}
 }

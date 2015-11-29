@@ -1,7 +1,7 @@
 
 <div class="container">
 	<div id="header">
-		<h1 class="text-center">Edit Komponen</h1>
+		<h1 class="text-center">Tambah Komponen</h1>
 	</div>
 
 	<br><br>
@@ -19,7 +19,7 @@
 				while($row_edit_komponen = mysqli_fetch_array($edit_komponen)) {
 			?>
 			
-			<form id="form-new-komponen" class="form-horizontal" method="post" action="edit_komponen_into_db?id=<?php echo $ID; ?>">
+			<form id="form-new-komponen" class="form-horizontal" method="post" action="add_stock_komponen_into_db?id=<?php echo $ID; ?>">
 					<div class="form-group">
 						<label class="col-sm-5 control-label">ID komponen</label>
 						<div class="col-sm-5">

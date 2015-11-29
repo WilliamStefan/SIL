@@ -1,7 +1,7 @@
 </div>
 
 <div id="footer">
-    <p>Copyright &copy; <?= date('Y', strtotime('now')); ?> IF4031 Kelompok 2</p>
+    <p>Copyright &copy; <?= date('Y', strtotime('now')); ?> IF4031 Kelompok 1</p>
 </div>
 
 
