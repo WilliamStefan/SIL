@@ -61,7 +61,9 @@
 						?></div></td>
 						<td class="hidden"><?php 
 							// store demand of each
-							$a = countSold($komponenItem['id_komponen']);
+							$month = date('m');
+							$year = date('Y');
+							$a = forecast($komponenItem['id_komponen'], $month, $year);
 							echo '<div id="sold-'.$komponenItem['id_komponen'].'">'. $a .' </div>';
 						?></div></td>
 						<td><?php echo '<div class="subtotal" id="subtotal-'.$komponenItem['id_komponen'].'"></div>';?></td>
@@ -109,7 +111,9 @@
 						?></div></td>
 						<td class="hidden"><?php 
 							// store demand of each
-							$a = countSold($komponenItem['id_komponen']);
+							$month = date('m');
+							$year = date('Y');
+							$a = forecast($komponenItem['id_komponen'], $month, $year);
 							echo '<div id="sold2-'.$komponenItem['id_komponen'].'">'. $a .' </div>';
 						?></div></td>
 						<td><?php echo '<div class="subtotal" id="subtotal2-'.$komponenItem['id_komponen'].'"></div>';?></td>

@@ -46,12 +46,16 @@
 						</td>
 						<td><?php echo $komponenItem['stok_tersedia'] ?></td>
 						<td><?php 
-							$a = countSold($komponenItem['id_komponen']);
+							$month = date('m');
+							$year = date('Y');
+							$a = forecast($komponenItem['id_komponen'],$month, $year);
 							echo '<div id="minStock-'.$komponenItem['id_komponen'].'">'. $a .' </div>';
 						?></div></td>
 						<td class="hidden"><?php 
 							// store demand of each
-							$a = countSold($komponenItem['id_komponen']);
+							$year = date('Y');
+							$month = date('m');
+							$a = forecast($komponenItem['id_komponen'], $month, $year);
 							echo '<div id="sold-'.$komponenItem['id_komponen'].'">'. $a .' </div>';
 						?></div></td>
 					</tr>

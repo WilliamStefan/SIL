@@ -1,8 +1,15 @@
 <?php
-function countSold($component_id){
+// forecasting penjulan bulan X: 	jumlah penjualan pada bulan okt,nov,des tahun lalu
+//									dibagi jumlah penjualan pada bulan okt,nov,des 2 tahun lalu
+//									dikali jumlah penjualan bulan X tahun lalu
+
+
+function countSold($component_id, $month, $year){
 	include '/../views/sql_connect.php';
 
-	$month = date('m');
+	// $month = date('m');
+	// $year = date('Y');
+	// echo 'tahun: '.$year;
 
 	$query = "SELECT SUM(jumlah_komponen) as sum FROM histori_penjualan WHERE DATE_FORMAT(tanggal,'%m') = '".$month."' and komponen='".$component_id."'";
 	$ambil_jumlah = mysqli_query($con, $query);
@@ -19,6 +26,23 @@ function countSold($component_id){
 		}
 	}
 	mysqli_close($con);
+}
+function calculateCoefisien($component_id, $year){
+	$yearBefore1 = 0 + countSold($component_id, 10, $year-1);
+	$yearBefore1 = $yearBefore1 + countSold($component_id, 11, $year-1);
+	$yearBefore1 = $yearBefore1 + countSold($component_id, 12, $year-1);
+
+	$yearBefore2 = 0 + countSold($component_id, 10, $year-2);
+	$yearBefore2 = $yearBefore1 + countSold($component_id, 11, $year-2);
+	$yearBefore2 = $yearBefore1 + countSold($component_id, 12, $year-2);
+
+	return $yearBefore1/$yearBefore2;	
+}
+
+function forecast($component_id, $month, $year){
+	$fc = countSold($component_id, $month, $year-1);
+	$fc = $fc * calculateCoefisien($component_id, $year);
+	return $fc;
 }
 
 function getDeliveryTime($supplier_id){
