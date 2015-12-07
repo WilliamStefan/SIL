@@ -51,7 +51,6 @@
 									<th>Pembeli</th>
 									<th>Komponen</th>
 									<th>Jumlah Komponen</th>
-									<th>Harga</th>
 									<th>Edit</th>
 									<th>Hapus</th>
 								</tr>
@@ -65,7 +64,6 @@
 									<td>' .$row_read_histori['pembeli']. '</td>
 									<td>' .$row_read_histori['komponen']. '</td>
 									<td>' .$row_read_histori['jumlah_komponen']. '</td>
-									<td>' .$row_read_histori['harga']. '</td>
 							';
 				?>
 									<td><a href="edit_histori?id=<?php echo $ID; ?>">Edit</a></td>
