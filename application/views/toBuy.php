@@ -38,7 +38,7 @@
 					<!-- ulang disini -->
 					<?php foreach ($komponens as $komponenItem): ?>
 					<?php echo '<tr class="displayChecker" id="displayChecker-'.$komponenItem['id_komponen'].'"> '?><!-- kalo jumlah stok > stok minimal bakal ditampilin -->
-						<td><?php echo $komponenItem['nama_komponen'] ?></td>
+						<td><?php echo '<a href="view_statistics?cid='.$komponenItem['id_komponen'].'">'.$komponenItem['nama_komponen'] .'</a>' ?></td>
 						<td>
 							<select onclick="calculateMinStok('<?php echo $komponenItem['id_komponen']?>')" class="form-control select1" id="selectSupplier-<?php echo $komponenItem['id_komponen']?>"><?php 
 								include '/../views/sql_connect.php';
@@ -88,7 +88,7 @@
 					<!-- ulang disini -->
 					<?php foreach ($komponens as $komponenItem): ?>
 					<?php echo '<tr class="displayChecker" id="displayChecker2-'.$komponenItem['id_komponen'].'"> '?><!-- kalo jumlah stok > stok minimal bakal ditampilin -->
-						<td><?php echo $komponenItem['nama_komponen'] ?></td>
+						<td><?php echo '<a href="view_statistics?cid='.$komponenItem['id_komponen'].'">'.$komponenItem['nama_komponen'] .'</a>' ?></td>
 						<td>
 							<select onclick="calculateMinStok2('<?php echo $komponenItem['id_komponen']?>')" class="form-control select2" id="selectSupplier2-<?php echo $komponenItem['id_komponen']?>"><?php 
 								include '/../views/sql_connect.php';

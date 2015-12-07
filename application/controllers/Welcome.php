@@ -79,6 +79,12 @@ class Welcome extends CI_Controller {
 		$this->load->view('minStok',$data);
 		$this->load->view('template/footer');
 	}
+	public function view_statistics(){
+		$this->load->helper('url');
+		$this->load->view('template/header');
+		$this->load->view('charts/statistik_penjualan');
+		$this->load->view('template/footer');
+	}
 	
 	// Create
 	public function create_new_komponen() {

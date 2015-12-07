@@ -11,12 +11,12 @@ function countSold($component_id, $month, $year){
 	// $year = date('Y');
 	// echo 'tahun: '.$year;
 
-	$query = "SELECT SUM(jumlah_komponen) as sum FROM histori_penjualan WHERE DATE_FORMAT(tanggal,'%m') = '".$month."' and komponen='".$component_id."'";
+	$query = "SELECT SUM(jumlah_komponen) as sum FROM histori_penjualan WHERE DATE_FORMAT(tanggal,'%m') = '".$month."' and komponen='".$component_id."' and DATE_FORMAT(tanggal, '%Y') = '".$year."'";
 	$ambil_jumlah = mysqli_query($con, $query);
 
 	if(mysqli_num_rows($ambil_jumlah) == 0) {
 		echo '
-			<h1>Tidak ada komponen dengan id: ' .$component_id. '</h1>
+			<p>Tidak ada komponen dengan id: ' .$component_id. '</p>
 		';
 		die();
 	}

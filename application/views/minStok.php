@@ -30,7 +30,7 @@
 					<!-- ulang disini -->
 					<?php foreach ($komponens as $komponenItem): ?>
 					<tr>
-						<td><?php echo $komponenItem['nama_komponen'] ?></td>
+						<td><?php echo '<a href="view_statistics?cid='.$komponenItem['id_komponen'].'">'.$komponenItem['nama_komponen'] .'</a>' ?></td>
 						<td>
 							<select onclick="calculateMinStok('<?php echo $komponenItem['id_komponen']?>')" class="form-control" id="selectSupplier-<?php echo $komponenItem['id_komponen']?>"><?php 
 									include '/../views/sql_connect.php';
