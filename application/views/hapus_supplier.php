@@ -3,7 +3,7 @@
 	
 	include 'sql_connect.php';
 
-	$query = "DELETE FROM supplier WHERE id='$ID'";
+	$query = "DELETE FROM supplier WHERE id_supplier='$ID'";
 	
 	if (!mysqli_query($con, $query)) {
 		echo '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span></button> <strong>Gagal!</strong> Penghapusan supplier gagal dilakukan. Error:'.mysqli_error($con).' </div>';

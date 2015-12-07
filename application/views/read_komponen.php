@@ -1,5 +1,6 @@
 <?php
 	include 'sql_connect.php';
+	include '/../controllers/dss.php';
 	
 	$query = "SELECT * FROM komponen ORDER BY id_komponen ASC";
 	$read_komponen = mysqli_query($con, $query);
@@ -61,7 +62,7 @@
 							echo'
 								<tr>
 									<td>' .$row_read_komponen['id_komponen']. '</td>
-									<td>' .$row_read_komponen['nama_komponen']. '</td>
+									<td><a href="view_statistics?cid=' .$row_read_komponen['id_komponen']. '">' .$row_read_komponen['nama_komponen']. '</a></td>
 									<td>' .$row_read_komponen['stok_tersedia']. '</td>
 							';
 				?>
