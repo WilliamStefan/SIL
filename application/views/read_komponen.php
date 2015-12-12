@@ -1,80 +1,106 @@
-<?php
-	include 'sql_connect.php';
-	include '/../controllers/dss.php';
-	
-	$query = "SELECT * FROM komponen ORDER BY id_komponen ASC";
-	$read_komponen = mysqli_query($con, $query);
-?>
-
+<?php include '/../controllers/dss.php';?>
 <div class="container">
 	<div id="header">
 		<h1 class="text-center">Lihat Komponen</h1>
 	</div>
 
 	<div id="content">
+		<br>
+		<!-- <h2>Lihat Komponen</h2> -->
+		<br>
 		<div class="row">
-			<div id="toBuyTable" class="col-md-12">
-				<br>
-				<?php
-					if(mysqli_num_rows($read_komponen) == 0) {
-						echo'
-							<center>
-								<h2> Basis data komponen kosong</h2>
-								<div class="row">
-									<div class="pull-right col-md-3">
-										<br>
-										<div class="form-group">
-											<div class="input-group">
-												<div class="input-group-addon"><i class="glyphicon glyphicon-plus"></i></div>
-												<a href="create_new_komponen"><button type="button" class="btn btn-primary">Tambah komponen</button></a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</center>
-						';
-					}
-					else {
-						echo'
-							<div class="row">
-								<div class="pull-right col-md-3">
-									<br>
-									<div class="form-group">
-										<div class="input-group">
-											<div class="input-group-addon"><i class="glyphicon glyphicon-plus"></i></div>
-											<a href="create_new_komponen"><button type="button" class="btn btn-primary">Tambah komponen</button></a>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<table class="table table-bordered table-striped table-hover table-condensed table-responsive">	
-								<tr>
-									<th>ID komponen</th>
-									<th>Nama komponen</th>
-									<th>Stok tersedia</th>
-									<th>Edit</th>
-								</tr>
-						';		
-						
-						while($row_read_komponen = mysqli_fetch_array($read_komponen)) {
-							$ID = $row_read_komponen['id_komponen'];
-							echo'
-								<tr>
-									<td>' .$row_read_komponen['id_komponen']. '</td>
-									<td><a href="view_statistics?cid=' .$row_read_komponen['id_komponen']. '">' .$row_read_komponen['nama_komponen']. '</a></td>
-									<td>' .$row_read_komponen['stok_tersedia']. '</td>
-							';
-				?>
-									<td><a href="edit_komponen?id=<?php echo $ID; ?>">Edit</a></td>
-								</tr>
-				<?php	}
-						echo'
-							</table>
-						';
-					}
-				?>
+			<div id="toBuyTable1" class="col-md-12">
+				<table class="table table-bordered table-striped table-hover table-condensed table-responsive">
+					<tr>
+						<th>ID Komponen</th>
+						<th>Nama Komponen</th>
+						<th>Supplier</th>
+						<th>Stok</th>
+						<th>Harga</th>
+						<th>Min stok</th>
+						<th>Edit</th>
+					</tr>
+					<!-- ulang disini -->
+					<?php foreach ($komponens as $komponenItem): ?>
+					<?php echo '<tr class="displayChecker" id="displayChecker-'.$komponenItem['id_komponen'].'"> '?><!-- kalo jumlah stok > stok minimal bakal ditampilin -->
+						<td><?php echo '<a href="view_statistics?cid='.$komponenItem['id_komponen'].'">'.$komponenItem['id_komponen'] .'</a>' ?></td>
+						<td><?php echo '<a href="view_statistics?cid='.$komponenItem['id_komponen'].'">'.$komponenItem['nama_komponen'] .'</a>' ?></td>
+						<td>
+							<select onclick="calculateMinStok('<?php echo $komponenItem['id_komponen']?>')" class="form-control select1" id="selectSupplier-<?php echo $komponenItem['id_komponen']?>"><?php 
+								include '/../views/sql_connect.php';
+								$query = "SELECT supplierbarang.id_supplier, supplierbarang.harga_beli_komponen, supplier.waktu_pengiriman FROM supplierbarang, supplier WHERE supplier.id_supplier = supplierbarang.id_supplier AND  supplierbarang.id_barang='".$komponenItem['id_komponen']."'";
+								$supp = mysqli_query($con, $query);
+								if(mysqli_num_rows($supp) != 0) {
+									while($row_ambil_jumlah = mysqli_fetch_array($supp)) {
+										echo '<option value="'. $row_ambil_jumlah['waktu_pengiriman'] ."-".$row_ambil_jumlah['harga_beli_komponen'].'" id="supplier-'. $row_ambil_jumlah['id_supplier'] .'"> ' . $row_ambil_jumlah['id_supplier'] . ' </option>';
+									}
+								}
+								mysqli_close($con);	
+							?></select>
+						</td>
+						<td><?php echo '<div id="stockNow-'.$komponenItem['id_komponen'].'" >'.$komponenItem['stok_tersedia'].'</div>' ?></td>
+						<td><?php 
+								echo '<div id="price-'.$komponenItem['id_komponen'].'"">'. "HARGA BELI BERDASARKAN SUPPLIER" .'</div>';?></td> 
+						<td><?php 
+							// $a = countSold($komponenItem['id_komponen']);
+							echo '<div id="minStock-'.$komponenItem['id_komponen'].'">'. "sold" .' </div>';
+						?></div></td>
+						<td class="hidden"><?php 
+							// store demand of each
+							$month = date('m');
+							$year = date('Y');
+							$a = forecast($komponenItem['id_komponen'], $month, $year);
+							echo '<div id="sold-'.$komponenItem['id_komponen'].'">'. $a .' </div>';
+						?></div></td>
+						<td><a href="edit_komponen?id=<?php echo $komponenItem['id_komponen']; ?>">Edit</a></td>
+					</tr>
+					<?php endforeach ?>
+					<!-- ulang sampe sini -->
+				</table>
 			</div>
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+
+	$(window).load(function(){
+		$("#toBuyTable2").css("display","none");
+	})
+	$( ".select1" ).each(function( index ) {
+		$id = this.id.substring(15);
+	  	calculateMinStok($id);
+	  	calculateSubtotal($id);
+	  	// hideSafeStocks($id);
+	  	// calculateTotal();
+	});
+	$("#cara1").click(function(){
+		$("#toBuyTable1").css("display","block");
+		$("#toBuyTable2").css("display","none");
+	});
+	function calculateMinStok($id_komponen){
+		$selectedSupplierInfo = $("#selectSupplier-"+$id_komponen).val();
+		$separatorPosition = $selectedSupplierInfo.indexOf("-");
+		$selectedSupplierDelTime = $selectedSupplierInfo.substring(0,$separatorPosition);
+		$selectedSupplierPrice = $selectedSupplierInfo.substring($separatorPosition+1);
+		$("#price-"+$id_komponen).text($selectedSupplierPrice);
+		$demand = $("#sold-"+$id_komponen).text();
+		$("#minStock-"+$id_komponen).text(Math.ceil($demand / 23 * $selectedSupplierDelTime));
+		calculateSubtotal($id_komponen);
+	};
+	function calculateSubtotal($id_komponen){
+		$price = $("#price-"+$id_komponen).text();
+		$amount = $("#minStock-"+$id_komponen).text();
+		$("#subtotal-"+$id_komponen).text($price * $amount);
+		// alert($amount);
+	}
+	function calculateTotal(){
+		$sum = 0;
+		$( ".subtotal" ).each(function( index ) {
+			// $sum = 0;
+			$sum += parseInt($(".subtotal" ).text());
+			$('.total').text($sum);
+		});
+	}
+
+</script>

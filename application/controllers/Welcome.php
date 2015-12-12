@@ -127,9 +127,11 @@ class Welcome extends CI_Controller {
 	}
 	// Read
 	public function read_komponen() {
+		$data['komponens'] = $this->Komponen_model->getKomponenAndSupplier();
+
 		$this->load->helper('url');
 		$this->load->view('template/header');
-		$this->load->view('read_komponen');
+		$this->load->view('read_komponen', $data);
 		$this->load->view('template/footer');
 	}
 	

@@ -42,7 +42,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="index_home">Home</a></li>
                             
-                            <li class="dropdown">
+                           <!--  <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Create<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="create_new_komponen">Komponen</a></li>
@@ -58,7 +58,7 @@
                                     <li><a href="read_histori">Histori penjualan</a></li>
                                     <li><a href="read_supplier">Supplier</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
                             
                             <!-- <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Update<span class="caret"></span></a>
