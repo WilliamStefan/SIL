@@ -220,7 +220,7 @@
 		$minstok = Math.ceil(Math.sqrt($minstok));
 
 		$("#minStock2-"+$id_komponen).text($minstok);
-		calculateSubtotal($id_komponen);
+		calculateSubtotal2($id_komponen);
 	};
 	function calculateSubtotal2($id_komponen){
 		$price = $("#price2-"+$id_komponen).text();
