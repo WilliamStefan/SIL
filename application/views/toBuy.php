@@ -19,8 +19,8 @@
 			<option>cara 2</option>
 		</select> -->
 					
-		<button class="btn" id="cara1">cara 1</button>
-		<button class="btn" id="cara2">cara 2</button>
+		<button class="btn" id="cara1">Heuristik</button>
+		<button class="btn" id="cara2">EOQ</button>
 
 		<br><br>
 		<!-- ALTERNATIF 1 : Q = dL -->
