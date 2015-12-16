@@ -19,8 +19,8 @@
 			<option>cara 2</option>
 		</select> -->
 					
-		<button class="btn" id="cara1">cara 1</button>
-		<button class="btn" id="cara2">cara 2</button>
+		<button class="btn" id="cara1">Heuristik</button>
+		<button class="btn" id="cara2">EOQ</button>
 
 		<br><br>
 		<!-- ALTERNATIF 1 : Q = dL -->
@@ -220,7 +220,7 @@
 		$minstok = Math.ceil(Math.sqrt($minstok));
 
 		$("#minStock2-"+$id_komponen).text($minstok);
-		calculateSubtotal($id_komponen);
+		calculateSubtotal2($id_komponen);
 	};
 	function calculateSubtotal2($id_komponen){
 		$price = $("#price2-"+$id_komponen).text();

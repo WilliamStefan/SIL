@@ -32,12 +32,13 @@ $des1 = countSold($component_id, '12', $year);
 ?>
 
 <div class="container">
-	<h2>Statistik penjualan barang <?php echo $component_id?></h2>
+	<h2>Statistik Penjualan Komponen dengan ID: <?php echo $component_id?></h2>
 	<div class="row">
 		<div class="col-md-6">
 			<canvas id="myChart" width="400" height="400"></canvas>
 		</div>
 		<div class="col-md-6">
+			<h4>Keterangan</h4>
 			<div class="circle yearnow"></div>
 			<div class="inline">
 				<?php echo date('Y')?>
@@ -52,13 +53,10 @@ $des1 = countSold($component_id, '12', $year);
 
 </div>
 
-
-
-
 <script type="text/javascript">
 
 var data = {
-  labels: ["January", "February", "March", "April", "May", "June", "July","August", "September",  " October", "November", "December"],
+  labels: ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli","Agustus", "September", "Oktober", "November", "Desember"],
   datasets: [
       {
       	// last year
